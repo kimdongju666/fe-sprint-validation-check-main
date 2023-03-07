@@ -4,6 +4,7 @@ let elInputUsername = document.querySelector('#username');
 let elFailureMessage = document.querySelector('.failure-message');
 let elSuccessMessage = document.querySelector('.success-message');
 let elMismatchMessage = document.querySelector('.mismatch-message');
+let elCheckPwMessage = document.querySelector('.checkPw-message');
 let elInputPassword = document.querySelector('#password');
 let elInputPasswordRetype = document.querySelector('#password-retype');
 
@@ -19,6 +20,16 @@ elInputUsername.onkeyup = function () {
     elFailureMessage.classList.remove('hide');
   }
 }
+
+elInputPassword.onkeyup = function () {
+  if(strongPassword(elInputPassword.value)) {
+    elCheckPwMessage.classList.add('hide');
+  }
+  else {
+    elCheckPwMessage.classList.remove('hide');
+  }
+}
+
 elInputPasswordRetype.onkeyup = function () {
   if(isMatch(elInputPassword.value, elInputPasswordRetype.value)) {
     elMismatchMessage.classList.add('hide');
@@ -31,6 +42,13 @@ elInputPasswordRetype.onkeyup = function () {
 function isMoreThan4Length(value) {
   // TODO : 동영상 강의를 보고 이 함수를 완성하세요.\
   return value.length >= 4
+}
+
+
+
+
+function strongPassword(elInputPassword) {
+  return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(elInputPassword);
 }
 
 function isMatch (elInputPassword, elInputPasswordRetype) {

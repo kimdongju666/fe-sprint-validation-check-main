@@ -44,7 +44,9 @@ function isMoreThan4Length(value) {
   return value.length >= 4
 }
 
-
+function btn() {
+  alert('코드스테이츠에 오신 것을 환영합니다!')
+}
 
 
 function strongPassword(elInputPassword) {

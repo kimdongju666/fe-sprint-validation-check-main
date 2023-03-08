@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>유효성 검사</title>
     <link rel="stylesheet" href="global-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link
       href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
@@ -17,11 +20,20 @@
 
   <body>
     <main>
-      <img
+      <header>
+        <img
         class="logo"
         src="./images/codestates-logo.png"
         alt="CODE_STATES_LOGO"
-      />
+        />
+        <div>Codestagram</div>
+      </header>
+
+      <nav>
+        <div>코딩만큼은</div>
+        <div>코드스테이츠</div> 
+      </nav>
+      
 
       <fieldset>
         <input type="text" id="username" placeholder="아이디" />
@@ -46,7 +58,11 @@
       <div class="checkPw-message hide">최소 8자 이상이면서, 알파벳과 숫자 및 특수문자(@$!%*#?&) 는 하나 이상 포함해야 합니다.</div>
 
       <fieldset class="signup">
-        <button>회원가입</button>
+        <button onclick="javascript:btn()">회원가입</button>
+      </fieldset>
+      -------------- OR --------------
+      <fieldset class="login">
+        <button>CodeStates 아이디로 로그인</button>
       </fieldset>
 
       <script src="script.js"></script>
